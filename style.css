@@ -1,0 +1,190 @@
+
+/*Media Queries - horizontal orientation*/
+
+/*-Class A General - (Body)-*/
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: flex;
+    flex-flow: row wrap;
+    background: linear-gradient( 160deg,#0A0A0B, #215BF0);
+    color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+    /*--Class B General - (header, Box(I e II))--*/
+
+    /*--Class B1 - (header)--*/
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 25vh;
+    }
+    header h1{
+        font-size: 6vw;
+        font-family: Elevator;
+    }
+
+    /*--Class B2 - (Box(I e II))--*/
+        /*--Class B2 General - (Box(I e II))--*/
+            /*---Class B2 General - Parte A (Box of Display)---*/
+            .Box{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                width: 50vw;
+                height: 75vh;
+            }
+
+            /*---Class B2 General - Parte B (Box of ButtonOne and ButtonTwo)---*/
+            .Box h2{
+                width: 29vw;
+                height: 5vw;
+                padding: 1vw 0.5vw;
+                font-family: transformers;
+                text-align: center;
+                font-size: 4vw;
+            }
+
+            .Box h2:hover{
+                border: solid 0.5vh white;
+                padding: 0.75vw calc(0.5vw - 0.5vh);
+            }
+
+            /*---Class B2 General - Parte C (Configuration of DisplayOne and DisplayTwo)---*/
+            #DisplayOne, #DisplayTwo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+                width: 100vw;
+                height: calc(75vh - 7vw - 20vh);
+            }
+
+        /*--Class B2 - Parte A (DisplayDigital)--*/
+        #DisplayDigital{
+            font-size: 4vw;
+            font-family: fdigital;
+        }
+
+        /*--Class B2 - Parte B (DisplayAnalog, Hours, Minutes, Seconds)--*/
+        #DisplayAnalog{
+            width: 25vh;
+            height: 25vh;
+            border-radius: 100%;
+            border: 0.5vh solid black;
+            background-image: url(./image/relogio.png);
+            background-size: cover;
+        }
+        #Hours{
+            width: 1vh;
+            height: 6vh;
+            top: calc(100vh - 23vh - 7vw + 6.5vh);
+            background: black;
+            position: absolute;
+            border-radius: 0.5vh;
+            transform-origin: bottom;
+        }
+        #Minutes{
+            width: 1vh;
+            height: 8vh;
+            top: calc(100vh - 23vh - 7vw + 4.5vh);
+            background: black;
+            position: absolute;
+            border-radius: 0.5vh;
+            transform-origin: bottom;
+        }
+        #Seconds{
+            width: 0.3vh;
+            height: 10vh;
+            top: calc(100vh - 23vh - 7vw + 2.5vh);
+            background: red;
+            position: absolute;
+            border-radius: 0.1vh;
+            transform-origin: bottom;
+        }
+
+/*Media Queries - Orientação Vertical*/
+
+@media all and (orientation: portrait){
+/*-Class A General - (Body)-*/
+
+    /*--Class B General - (header, Box(I e II))--*/
+
+    /*--Class B1 - (header)--*/
+    header{
+        height: 24vh;
+    }
+    header h1{
+        font-size: 15vw;
+    }
+
+    /*--Class B2 - (Box(I e II))--*/
+        /*--Class B2 General - (Box(I e II))--*/
+            /*---Class B2 General - Parte A (Box of Display)---*/
+            .Box{
+                width: 100vw;
+                height: 38vh;
+            }
+
+            /*---Class B2 General - Parte B (Box of ButtonOne and ButtonTwo)---*/
+            .Box h2{
+                height: 12vw;
+                padding: 2vw;
+                width: 60vw;
+                font-size: 10vw;
+            }
+
+            /*---Class B2 General - Parte C (Configuration of DisplayOne and DisplayTwo)---*/
+            #DisplayOne, #DisplayTwo{
+                width: 100vw;
+                height: calc(38vh - 14vw - 12vh);
+            }
+
+        /*--Class B2 - Parte A (DisplayDigital)--*/
+        #DisplayDigital{
+            font-size: 8vw;
+        }
+
+        /*--Class B2 - Parte B (DisplayAnalog, Hours, Minutes, Seconds)--*/
+        #DisplayAnalog{
+            width: calc(38vh - 14vw - 15vh);
+            height: calc(38vh - 14vw - 15vh);
+        }
+        #Hours{
+            width: 0.7vh;
+            height: 4.5vh;
+            top: calc(100vh - 16.6vh);
+        }
+        #Minutes{
+            width: 0.7vh;
+            height: 6vh;
+            top: calc(100vh - 18.3vh);
+        }
+        #Seconds{
+            width: 0.3vh;
+            height: 7.5vh;
+            top: calc(100vh - 19.6vh);
+        }
+
+}
+
+
+@font-face {
+    font-family: Elevator;
+    src: url('./font-family/elevator.otf');
+}
+@font-face {
+    font-family: transformers;
+    src: url('./font-family/transformers.ttf');
+}
+@font-face {
+    font-family: fdigital;
+    src: url('./font-family/f-digital.TTF');
+}
